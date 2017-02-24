@@ -8,14 +8,14 @@ import java.util.TimeZone;
 
 import javax.xml.datatype.XMLGregorianCalendar;
 
-public class JAXBObjectParserManager 
+public class JAXBParser 
 {
-	private static JAXBObjectParserManager _manager;
+	private static JAXBParser _manager;
 	private DateFormat df;
 	private TimeZone timezone;
 	private static final int __max_tree_level = 7;
 	
-	private JAXBObjectParserManager()
+	private JAXBParser()
 	{
 	}
 	
@@ -88,11 +88,11 @@ public class JAXBObjectParserManager
 		return value;
 	}
 	
-	public static JAXBObjectParserManager getInstance()
+	public static JAXBParser getInstance()
 	{
 		if( _manager == null)
 		{
-			_manager = new JAXBObjectParserManager();
+			_manager = new JAXBParser();
 		}
 		return _manager;
 	}
